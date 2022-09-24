@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import styles from './Header.module.css';
-
-const pages = ['Home', 'Almirah', 'Contact Us'];
+import { Link, NavLink , useNavigate} from 'react-router-dom';
+const pages = ['Home', 'Products', 'Awards & Recognitions','Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -28,8 +28,9 @@ const Header = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (event:any ) => {
     setAnchorElNav(null);
+   // console.log(event.currentTarget)
   };
 
   const handleCloseUserMenu = () => {
@@ -40,12 +41,12 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component= {Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -90,17 +91,19 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <NavLink to={'/'+page.toLowerCase()}>{page}</NavLink>
+                    </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -121,7 +124,8 @@ const Header = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
               >
-                {page}
+                <NavLink to={'/' + page.toLowerCase()} className={styles.header_Link}>{page}</NavLink>
+                {/* {page} */}
               </Button>
             ))}
           </Box>
