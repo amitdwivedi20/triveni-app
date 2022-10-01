@@ -1,3 +1,24 @@
 .product{
     padding: 5px;
 }
+
+.card_img{
+    height:auto;
+    width:200px!important;
+    padding:5px;
+}
+
+.product_card__action{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.product__productname{
+    font-weight: 600;
+
+}
+
+.product__productname:hover{
+    color: #1976d2;
+    cursor: pointer;
+}

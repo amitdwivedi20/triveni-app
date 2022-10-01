@@ -5,7 +5,8 @@ const Home = () => {
 
     return (
         <div>
-            This is Home Page!!
+
+            लाडली बिटिया की गृहस्थी में निपटाऊ नहीं टिकाऊ 
         </div>
     )
 }

@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import styles from './Header.module.css';
 import { Link, NavLink , useNavigate} from 'react-router-dom';
-const pages = ['Home', 'Products', 'Awards & Recognitions','Contact Us'];
+const pages = ['Home', 'Products', 'About Us', 'Awards & Recognitions','Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
