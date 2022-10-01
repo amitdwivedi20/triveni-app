@@ -14,7 +14,10 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import styles from './Header.module.css';
 import { Link, NavLink , useNavigate} from 'react-router-dom';
-const pages = ['Home', 'Products', 'About Us', 'Awards & Recognitions','Contact Us'];
+import { routeUrlList } from '../../DataMock/data';
+
+//const pages = ['Home', 'Products', 'About Us', 'Awards & Recognitions','Contact Us'];
+const pages = routeUrlList;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -57,7 +60,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            Triveni
+            Triveni Almirah
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,9 +93,9 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.url} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <NavLink to={'/'+page.toLowerCase()}>{page}</NavLink>
+                    <NavLink to={'/'+page.url.toLowerCase()}>{page.name}</NavLink>
                     </Typography>
                 </MenuItem>
               ))}
@@ -115,16 +118,16 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            Triveni
+            Triveni Almirah
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.url}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
               >
-                <NavLink to={'/' + page.toLowerCase()} className={styles.header_Link}>{page}</NavLink>
+                <NavLink to={'/' + page.url.toLowerCase()} className={styles.header_Link}>{page.name}</NavLink>
                 {/* {page} */}
               </Button>
             ))}

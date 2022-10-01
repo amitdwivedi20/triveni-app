@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Footer.module.css';
-
+import CopyrightIcon from '@mui/icons-material/Copyright';
 const Footer = () => {
     return (
         <footer className={styles.footer}>
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.footer__copyright}>
                     <div className={styles.footer__copyright__content}>
-                        <p>@ 2022 <a href="/">Triveni Almirah</a> All Rights Reserved.</p>
+                        <p><CopyrightIcon fontSize="inherit" className={styles.footer__copyright__icon}/> 2022 <a href="/">Triveni Almirah</a> All Rights Reserved.</p>
                     </div>
 
                 </div>

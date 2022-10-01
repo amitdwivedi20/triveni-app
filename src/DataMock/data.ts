@@ -154,3 +154,12 @@ export const products = [
     }
 ]
 
+
+export const routeUrlList = [
+    {'name' : 'Home', 'url' : ''},
+    {'name' : 'Products', 'url' : 'products'},
+    {'name' : 'About Us', 'url' : 'aboutus'},
+    {'name' : 'Awards and Recognitions', 'url' : 'awardsandrecognitions'},
+    {'name' : 'contact Us', 'url' : 'contactus'}
+]
+

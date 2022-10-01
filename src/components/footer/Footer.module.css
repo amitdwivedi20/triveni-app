@@ -64,3 +64,9 @@
     text-align: start;
     margin: auto;
 }
+.footer__copyright__content{
+    padding: 0 5px;
+}
+.footer__copyright__icon{
+    vertical-align: text-bottom;
+}
