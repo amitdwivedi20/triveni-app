@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import Header from './components/header/Header';
+//import Products from './pages/products/Products';
+import Home from './pages/home/Home';
+import Footer from './components/footer/Footer';
+
+
+//lazy loading 
+const Products = React.lazy(() => import('./pages/products/Products'))
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Suspense fallback={<p>Loading....</p>}>
+        <Routes>
+          <Route path="*" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </Suspense>
+       
+        <Footer />
+      
+
     </div>
   );
 }
