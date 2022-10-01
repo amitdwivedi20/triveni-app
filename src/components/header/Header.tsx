@@ -11,12 +11,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+//import AdbIcon from '@mui/icons-material/Adb';
 import styles from './Header.module.css';
-import { Link, NavLink , useNavigate} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { routeUrlList } from '../../DataMock/data';
 
-//const pages = ['Home', 'Products', 'About Us', 'Awards & Recognitions','Contact Us'];
+
 const pages = routeUrlList;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
