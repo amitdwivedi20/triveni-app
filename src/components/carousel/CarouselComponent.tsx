@@ -8,39 +8,40 @@ const CarouselComponent = ()=>{
     return(
         <div>
              <Carousel infiniteLoop centerMode autoPlay={true} showThumbs={false} autoFocus={true}>
-                <div className={styles.slide}>
-                    <h2>Header 1</h2>
+                <div className={styles.slide}>                    
                     <img src="https://picsum.photos/id/1001/500/500" />
                     <p className="legend">Legend 1</p>
+                    <h2>Header 1</h2>
                 </div>
-                <div className={styles.slide}>
-                <h2>Header 1</h2>
+                <div className={styles.slide}>                
                     <img src="https://picsum.photos/id/1040/500/500" />
                     <p className="legend">Legend 2</p>
+                    <h2>Header 1</h2>
                 </div>
-                <div className={styles.slide}>
-                <h2>Header 1</h2>
+                <div className={styles.slide}>                
                     <img src="https://picsum.photos/id/1047/500/500" />
                     <p className="legend slide-up">Legend 3</p>
+                    <h2>Header 1</h2>
                 </div>
                 <div className={styles.slide}>
-                <h2>Header 1</h2>
+                
                     <img src="https://picsum.photos/id/1070/500/500" />
-                    <p className="legend slide-up">Legend 3</p>
+                    <p className="legend slide-up">Legend 4</p>
+                    <h2>Header 1</h2>
                 </div>
-                <div className={styles.slide}>
-                <h2>Header 1</h2>
+                <div className={styles.slide}>                
                     <img src="https://picsum.photos/id/1072/500/500" />
-                    <p className="legend slide-up">Legend 3</p>
+                    <p className="legend slide-up">Legend 5</p>
+                    <h2 >Header 1</h2>
                 </div>
-                <div className={styles.slide}>
-                <h2>Header 1</h2>
+                <div className={styles.slide}>                
                     <img src="https://picsum.photos/id/1071/500/500" />
-                    <p className="legend slide-up">Legend 3</p>
+                    <p className="legend slide-up">Legend 6</p>
+                    <h2>Header 1</h2>
                 </div>
                 <div className={styles.slide}>
                     <img src="https://picsum.photos/id/111/500/500" />
-                    <p className="legend slide-up">Legend 3</p>
+                    <p className="legend slide-up">Legend 7</p>
                     <h2>Header 1</h2>
                 </div>
             </Carousel>

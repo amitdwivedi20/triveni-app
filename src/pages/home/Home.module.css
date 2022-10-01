@@ -15,5 +15,16 @@ section:not(.carousel__section){
 
 .homePage__section div{
     margin: auto;
-}   
+}
+.site_banner{
+    background-color: #F4C430;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.site_banner h4{
+    margin: 0;
+    color: red;
+    margin: auto;
+}
 

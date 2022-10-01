@@ -34,7 +34,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.footer__copyright}>
-                    <p>@ 2022 <a>Triveni Almirah</a> All Rights Reserved.</p>
+                    <div className={styles.footer__copyright__content}>
+                        <p>@ 2022 <a href="/">Triveni Almirah</a> All Rights Reserved.</p>
+                    </div>
+
                 </div>
             </div>
         </footer>

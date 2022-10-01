@@ -6,22 +6,23 @@ const Home = () => {
 
     return (
         <div className={styles.homePage}>
-            <p className='animate__animated animate__slideInLeft'>
-            लाडली बिटिया की गृहस्थी में निपटाऊ नहीं टिकाऊ
-            </p>
-            
+            <div className={styles.site_banner}>
+                <h4 className='animate__animated animate__slideInLeft'>
+                    लाडली बिटिया की गृहस्थी में निपटाऊ नहीं टिकाऊ
+                </h4>
+            </div>
             <section className={styles.homePage__section}>
                 <div className='animate__animated animate__fadeInUp' >
-                <h1>Coming Soon...</h1>
-                <h2>Dev in progress..</h2>
+                    <h1>Coming Soon...</h1>
+                    <h2>Dev in progress..</h2>
                 </div>
-                
             </section>
+
             <section className={styles.homePage__section}></section>
             <section className={styles.homePage__section}></section>
-            
+
             <section className={styles.carousel__section}>
-                <CarouselComponent/>
+                <CarouselComponent />
             </section>
             <section className={styles.homePage__section}></section>
             <section className={styles.homePage__section}></section>
