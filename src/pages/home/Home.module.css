@@ -1,0 +1,9 @@
+.homePage section:nth-of-type(odd){
+    min-height: 600px;
+    background-color: #000;
+}
+
+.homePage section:nth-of-type(even){
+    min-height: 600px;
+    background-color: #fff;
+}
