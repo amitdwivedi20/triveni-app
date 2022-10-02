@@ -1,5 +1,6 @@
 import React from 'react';
 import CarouselComponent from '../../components/carousel/CarouselComponent';
+import 'animate.css';
 import styles from './Home.module.css';
 
 const Home = () => {
