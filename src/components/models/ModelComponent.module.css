@@ -1,0 +1,87 @@
+.model_content__item {    
+    flex-basis:33.33%;
+}
+
+.model_content{
+    display: flex;    
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+.model_content__item:nth-of-type(odd){
+    background-color: aqua;
+}
+.image{
+    max-height: 300px;;
+}
+.overlay h1{
+    margin: 0;
+}
+
+.content__header:hover{
+   cursor: pointer;
+    color: rgb(176, 68, 68);
+}
+.content__header{
+    padding-left: 5%;
+}
+
+.overlay{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    color:#fff;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: start;
+}
+
+@media screen and (min-width: 1024px) {
+   
+  }
+   
+  /* For Tablet View */
+  @media screen and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+    
+  }
+   
+  /* For Mobile Portrait View */
+  @media screen and (max-device-width: 480px)
+  and (orientation: portrait) {
+    .model_content__item {    
+        flex-basis:50%;
+    }
+  }
+   
+  /* For Mobile Landscape View */
+  @media screen and (max-device-width: 640px)
+  and (orientation: landscape) {
+   
+  }
+   
+  /* For Mobile Phones Portrait or Landscape View */
+  @media screen and (max-device-width: 640px) {
+   
+  }
+   
+  /* For iPhone 4 Portrait or Landscape View */
+  @media screen and (min-device-width: 320px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+  }
+   
+  /* For iPhone 5 Portrait or Landscape View */
+  @media (device-height: 568px) and (device-width: 320px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+   
+  }
+   
+  /* For iPhone 6 and 6 plus Portrait or Landscape View */
+  @media (min-device-height: 667px) and (min-device-width: 375px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    
+  }

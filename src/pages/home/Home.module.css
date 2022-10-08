@@ -1,16 +1,19 @@
 
-section:not(.carousel__section){
+section:not(.carousel__section,.homePage__section__Model){
     display: flex;
 }
 .homePage section:nth-of-type(odd){
-    min-height: 600px;
+    min-height: 200px;
     background-color: #000;
     color: #fff;
 }
 
 .homePage section:nth-of-type(even){
-    min-height: 600px;
+    min-height: 200px;
     background-color: #fff;
+}
+.homePage__section__1{
+    min-height: none;
 }
 
 .homePage__section div{
@@ -26,5 +29,10 @@ section:not(.carousel__section){
     margin: 0;
     color: red;
     margin: auto;
+}
+
+.homePage__section__Model .homePage__section__Model___title{
+    text-align: start;
+    padding-left: 2%;
 }
 
