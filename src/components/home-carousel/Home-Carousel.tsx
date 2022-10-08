@@ -26,8 +26,8 @@ const HomeCarousel = () => {
                 />
                 <div className={styles.overlay}>
                     <div className={styles.content__header}>
-                        <h1> <a>Think Big Do Creative Grow Business</a></h1>
-                        <p><a>Shaped By performance</a></p>
+                        <h1> <a href="">Think Big Do Creative Grow Business</a></h1>
+                        <p><a href="">Shaped By performance</a></p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,6 @@ const HomeCarousel = () => {
                         <h1>Think Big Do Creative  Grow Business</h1>
                         <p>Shaped By performance</p>
                     </div>
-
                 </div>
             </div>
         </OwlCarousel>
