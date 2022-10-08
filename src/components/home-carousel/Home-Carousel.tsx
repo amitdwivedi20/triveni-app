@@ -11,10 +11,7 @@ const HomeCarousel = () => {
         autoplay: true,
         mouseDrag: true,
         touchDrag: true,
-        dots:true,
-        nav: true,
-        navText: ["<i class='fa fa-chevron-right'></i>","<i class='fa fa-chevron-left'></i>"]
-
+        dots: true
     };
 
     return (
@@ -26,7 +23,7 @@ const HomeCarousel = () => {
                 />
                 <div className={styles.overlay}>
                     <div className={styles.content__header}>
-                        <h1> <a href="">Think Big Do Creative Grow Business</a></h1>
+                        <h1><a href="">Think Big Do Creative Grow Business</a></h1>
                         <p><a href="">Shaped By performance</a></p>
                     </div>
                 </div>
@@ -38,10 +35,9 @@ const HomeCarousel = () => {
                 />
                 <div className={styles.overlay}>
                     <div className={styles.content__header}>
-                        <h1>Think Big Do Creative Grow Business</h1>
-                        <p>Shaped By performance</p>
+                        <h1><a href="">Think Big Do Creative Grow Business</a></h1>
+                        <p><a href="">Shaped By performance</a></p>
                     </div>
-
                 </div>
             </div>
             <div className="item">
@@ -51,8 +47,8 @@ const HomeCarousel = () => {
                 />
                 <div className={styles.overlay}>
                     <div className={styles.content__header}>
-                        <h1>Think Big Do Creative  Grow Business</h1>
-                        <p>Shaped By performance</p>
+                        <h1><a href="">Think Big Do Creative Grow Business</a></h1>
+                        <p><a href="">Shaped By performance</a></p>
                     </div>
                 </div>
             </div>
