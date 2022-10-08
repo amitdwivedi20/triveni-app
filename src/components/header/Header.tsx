@@ -128,12 +128,11 @@ const Header = () => {
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
               >
                 <NavLink to={'/' + page.url.toLowerCase()} className={styles.header_Link}>{page.name}</NavLink>
-                {/* {page} */}
               </Button>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -161,7 +160,7 @@ const Header = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
