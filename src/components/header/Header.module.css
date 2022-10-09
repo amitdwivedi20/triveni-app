@@ -10,3 +10,51 @@ a.header_Link{
 a.header_Link:hover{
     
 }
+
+.nav_mobile__close span{
+    float:right;
+}
+
+.nav_mobile__link,.nav_mobile__close{
+   color:  #424245;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+.nav_mobile__close___icon{
+    padding-right: 5px;
+}
+
+.nav_mobile__image__container{
+    display: flex;    
+    flex-wrap: wrap;
+}
+.nav_mobile__image__container___item{
+    flex-basis: 50%;
+    min-height: 100px;
+    display: flex;
+    
+}
+
+.nav_mobile__image__container___item:nth-of-type(odd){
+    background-color: aqua;
+   
+}
+
+.nav_mobile__image__container___item:nth-of-type(even){
+    background-color: rgb(55, 144, 144);
+   
+}
+
+.nav_mobile__image__container___item__content{
+    color: #fff;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    display: flex;
+}
+
+.nav_mobile__image__container___item__content__title{
+    margin: auto;
+}
