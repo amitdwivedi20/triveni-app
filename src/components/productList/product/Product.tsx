@@ -4,7 +4,7 @@ import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typ
 import styles from './Product.module.css';
 
 const Product = (props: any) => {
-    console.log(props.product);
+    //console.log(props.product);
     const product = props.product;
     return (
         <div className= {styles.product}>
@@ -24,18 +24,17 @@ const Product = (props: any) => {
                     <Typography variant="body2" color="text.secondary">
                        {product.description}
                     </Typography>
-                    <Typography>
+                    <Typography className={styles.product__description__List}>
                         {product.descriptionList.map((description: string) => <div><li>{description}</li></div>)}
                     </Typography>
                 </CardContent>
                 </Box>
 
-                <Box className={styles.product_card__action}>
+                {/* <Box className={styles.product_card__action}>
                 <CardActions>
                     <Button size="small" variant="outlined">More Details</Button>
-                    {/* <Button size="small">Add to cart</Button> */}
                 </CardActions>
-                </Box>
+                </Box> */}
                 
             </Card>
         </div>

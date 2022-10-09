@@ -3,8 +3,8 @@
 }
 
 .card_img{
-    height:auto;
-    width:200px!important;
+    height:180px;
+    width: 150px;
     padding:5px;
 }
 
@@ -21,4 +21,8 @@
 .product__productname:hover{
     color: #1976d2;
     cursor: pointer;
+}
+
+.product__description__List{
+    font-size: 10px;
 }

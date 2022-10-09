@@ -4,7 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/header/Header';
 import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
-
+import { Fab } from '@mui/material';
+import GoToTop from './components/go-to-top/GoToTopComponent';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 //lazy loading 
 const Products = React.lazy(() => import('./pages/products/Products'));
@@ -12,8 +14,9 @@ const ContactUs = React.lazy(() => import('./pages/contact-us/ContactUs'));
 const Awards = React.lazy(() => import('./pages/awards/Awards'));
 const AboutUs = React.lazy(() => import('./pages/about-us/AboutUs'));
 
-const App = () => {
+const App = (props:any) => {
   return (
+    <React.Fragment>
     <div className="App">
       <Header />
       <Suspense fallback={<p>Loading....</p>}>
@@ -28,6 +31,12 @@ const App = () => {
       </Suspense>
       <Footer />
     </div>
+    <GoToTop {...props}>
+        <Fab size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </GoToTop>
+    </React.Fragment>
   );
 }
 

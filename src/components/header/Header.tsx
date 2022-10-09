@@ -117,7 +117,7 @@ const Header = (props: Props) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar position="static" component="nav">
+      <AppBar position="static" component="nav" id="back-to-top-anchor">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
