@@ -4,7 +4,7 @@ section:not(.carousel__section,.homePage__section__Model){
 }
 .homePage section:nth-of-type(odd){
     min-height: 200px;
-    background-color: #000;
+    /* background-color: #000; */
     color: #fff;
 }
 

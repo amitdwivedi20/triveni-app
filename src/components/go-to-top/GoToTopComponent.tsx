@@ -2,15 +2,15 @@ import { Box, Fade, useScrollTrigger } from "@mui/material";
 import React from "react";
 
 
-interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window?: () => Window;
-    children: React.ReactElement;
-  }
-const GoToTop = (props: Props) =>{
+// interface Props {
+//     /**
+//      * Injected by the documentation to work in an iframe.
+//      * You won't need it on your project.
+//      */
+//     window?: () => Window;
+//     children: React.ReactElement;
+//   }
+const GoToTop = (props: any) =>{
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.

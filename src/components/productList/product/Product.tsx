@@ -2,13 +2,20 @@ import React from "react";
 import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
 
 import styles from './Product.module.css';
+import { useNavigate } from "react-router-dom";
 
 const Product = (props: any) => {
+    const navigate = useNavigate();
+    const onClickItem: any = async () => {
+        console.log(props.product.id);
+        
+        navigate(`/products/${props.product.id}`)
+    }
     //console.log(props.product);
     const product = props.product;
     return (
         <div className= {styles.product}>
-            <Card sx={{ maxWidth: 'xl',display: 'flex' ,flexDirection: 'row', margin:'auto'}}>
+            <Card sx={{ maxWidth: 'xl',display: 'flex' ,flexDirection: 'row', margin:'auto'}} onClick={onClickItem}>
                 
                 <CardMedia
                     component="img"
@@ -25,7 +32,7 @@ const Product = (props: any) => {
                        {product.description}
                     </Typography>
                     <Typography className={styles.product__description__List}>
-                        {product.descriptionList.map((description: string) => <div><li>{description}</li></div>)}
+                        {product.descriptionList.map((description: string,index:number) => <li key={index}>{description}</li>)}
                     </Typography>
                 </CardContent>
                 </Box>
