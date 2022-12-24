@@ -43,6 +43,7 @@
     color: #fff;
     padding: 15px;
     margin-top: 20px;
+    display: none;
 }
 
 .aboutus__content__whowearesection__awards li,.aboutus__content__whowearesection__awards p{
@@ -55,15 +56,16 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    background: #fff;
+    background: rgb(168 156 229);
     text-align: start;
     padding: 0 15px;
     margin-top: 20px;
+    color: #fff;
 }
 
-.aboutus__content__otherInfo p {
+/* .aboutus__content__otherInfo p {
     color: #777777;
-}
+} */
 
 @media screen and (min-width: 1024px) {}
 

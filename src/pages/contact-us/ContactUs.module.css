@@ -38,6 +38,14 @@
 .contactus__section__container__item h1 {
     /* text-decoration: underline; */
     text-transform: uppercase;
+    /* font-family: 'Tondo'; */
+}
+
+.contactus__or{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    font-family: Tondo;
 }
 
 @media screen and (min-width: 1024px) {}
@@ -52,6 +60,9 @@
     }
     .contactus__banner___title{
         margin: 50px auto;
+    }
+    .contactus__or{
+        color: black;
     }
 }
 

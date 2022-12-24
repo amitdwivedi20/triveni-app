@@ -22,8 +22,8 @@ const AboutUs = () => {
                     <div className={styles.aboutus__content__whowearesection__item}>
                         <h1>We are different than rest</h1>
                         <p>
-                            Triveni Almirah is India's No. One Domestic Fancy Almirah company.
-                            We one of the biggest manufacturer of domestic Steel Almirah with presence in more than 800 cities, 2500 dealers network across 15 states.
+                        At the Triveni Almirah we are committed to improving the quality of life of customer by offering comfortable living space with ease and confidence.
+                        We are committed to customer for 100% satisfaction.
                         </p>
                     </div>
                     <div className={styles.aboutus__content__whowearesection__item}>
@@ -70,7 +70,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.aboutus__content__whowearesection__awards}>
+            {/* <div className={styles.aboutus__content__whowearesection__awards}>
                 <h1>AWARDS & ACHIEVEMENT</h1>
                 <p>
                     Under the guidance of our mentor, "Mr. Varun Kumar Tiwari", Chairman & Managing Director we have been able to carve a niche for ourselves in the industry. His rich industry experience and sharp business ethics have helped us in forming a strong foothold in the market. In result we are awarded by the government as follows:-
@@ -90,9 +90,9 @@ const AboutUs = () => {
                         <li>Award by रक्षा मंत्री भारत सरकार एवं मुख्य मंत्री उत्तर प्रदेश द्वारा सम्मान, in 2021.</li>
                     </ul>
                 </p>
-            </div>
+            </div> */}
             <div className={styles.aboutus__content__otherInfo}>
-                <h1>What Keeps Up Going</h1>
+                <h1>What Keeps Us Going</h1>
                 <p>
                     Triveni Almirah believes that any business conduct can be ethical only when it rests on the core values of Honesty, Integrity, Respect, Fairness, Purposefulness, Trust, and Caring.
                     The essence of these commitments is that each employee conducts the company's business with integrity, in compliance with applicable laws, and in a manner that excludes considerations of personal advantage.

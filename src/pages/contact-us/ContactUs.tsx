@@ -17,7 +17,7 @@ const ContactUs = () => {
                     <h1>Contact Info:</h1>
                     <ContactUsInfo/>
                     </div>
-                    <p>OR</p>
+                    <p className={styles.contactus__or}>OR</p>
                     <div className={styles.contactus__section__container__item}>
                         <h1>Fill this Form. We will get back to you.</h1>
                         <ContactUsForm/>
