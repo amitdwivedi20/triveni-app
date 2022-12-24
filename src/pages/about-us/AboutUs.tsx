@@ -8,7 +8,6 @@ const AboutUs = () => {
                 <div className={styles.aboutus__banner___title}>
                     About Triveni Almirah
                 </div>
-
             </div>
 
             <div className={styles.aboutus__content}>

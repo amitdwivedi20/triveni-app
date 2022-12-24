@@ -6,14 +6,20 @@ import styles from './ContactUs.module.css';
 const ContactUs = () => {
     return (
         <div className={styles.contactus}>
+            <div className={styles.contactus__banner}>
+                <div className={styles.contactus__banner___title}>
+                    Need any help ? Reach Out To Us
+                </div>
+            </div>
             <div className={styles.contactus__section}>
                 <div className={styles.contactus__section__container}>
                     <div className={styles.contactus__section__container__item}>
                     <h1>Contact Info:</h1>
                     <ContactUsInfo/>
                     </div>
+                    <p>OR</p>
                     <div className={styles.contactus__section__container__item}>
-                        <h1>Contact US Form</h1>
+                        <h1>Fill this Form. We will get back to you.</h1>
                         <ContactUsForm/>
                     </div>
                 </div>

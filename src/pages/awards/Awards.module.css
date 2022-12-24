@@ -1,3 +1,36 @@
-.awards{
+.awards {
     min-height: calc(100vh - 100px);
+    background-color: #f5f5f7;
+}
+
+.awards__banner {
+    font-family: Tondo;
+    font-size: 40px;
+    min-height: 200px;
+    background-color: rgb(168 156 229);
+    display: flex;
+}
+
+.awards__banner___title {
+    margin: 25px auto;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.awards__content__whowearesection__awards {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: -60px;
+    background: #fff;
+    padding: 0 10px;
+    border-radius: 15px;
+}
+.awards__content__whowearesection__awards p{
+    text-align: start;
+    color: #777777;
+}
+.awards__content__whowearesection__awards h1{
+    text-transform: uppercase;
 }

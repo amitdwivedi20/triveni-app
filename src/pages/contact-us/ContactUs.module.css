@@ -3,7 +3,23 @@
     background: #f5f5f7;
 }
 
-.contactus__section {}
+.contactus__section {
+    margin-top: -65px;
+}
+
+.contactus__banner {
+    font-family: Tondo;
+    font-size: 40px;
+    min-height: 200px;
+    background-color: rgb(168 156 229);
+    display: flex;
+}
+
+.contactus__banner___title {
+    margin: 35px auto;
+    color: #fff;
+    text-transform: uppercase;
+}
 
 .contactus__section__container {
     display: flex;
@@ -20,7 +36,7 @@
 }
 
 .contactus__section__container__item h1 {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-transform: uppercase;
 }
 
@@ -33,6 +49,9 @@
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
     .contactus__section__container {
         display: block;
+    }
+    .contactus__banner___title{
+        margin: 50px auto;
     }
 }
 
