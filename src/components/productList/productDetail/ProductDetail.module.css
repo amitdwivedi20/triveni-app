@@ -1,4 +1,4 @@
-.product_detail_container{
+.product_detail_container {
     display: flex;
     flex-direction: row;
     max-width: 1536px;
@@ -8,15 +8,22 @@
 }
 
 
-.product_detail_content__image__container{   
+.product_detail_content__image__container {
     flex-grow: 1.5;
-    width:30%;
+    width: 40%;
     position: relative;
     min-height: 600px;
+    padding: 25px 5px;
 }
-.product_detail_content{
+
+.product_detail_content {
     flex-grow: 3;
-    width:70%;
+    width: 60%;
     overflow-y: scroll;
     height: 100vh;
+}
+
+.product_detail_content__image__container img {
+    width: fit-content;
+    width: -webkit-fill-available;
 }

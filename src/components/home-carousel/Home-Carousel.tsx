@@ -3,6 +3,11 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import styles from './Home-Carousel.module.css';
+import carousel1 from '../../assets/images/carousel1.jpg';
+import carousel2 from '../../assets/images/carousel2.jpg';
+import carousel3 from '../../assets/images/carousel3.jpg';
+import carousel1Large from '../../assets/images/carousel1_large.jpg';
+
 const HomeCarousel = () => {
     const options = {
         loop: true,
@@ -18,7 +23,7 @@ const HomeCarousel = () => {
         <OwlCarousel className="owl-theme" {...options}>
             <div className="item">
                 <img className={styles.image}
-                    src="https://d2rdb56lmj4es2.cloudfront.net/data/photo/2019/3/28/0328194-2590-FCBD-5A4FCA54E307E0AB.jpg"
+                    src="https://picsum.photos/id/1002/900/900"
                     alt="road"
                 />
                 <div className={styles.overlay}>
@@ -30,7 +35,7 @@ const HomeCarousel = () => {
             </div>
             <div className="item">
                 <img className={styles.image}
-                    src="https://d2rdb56lmj4es2.cloudfront.net/data/photo/2019/2/18/0218196-2590-FCBD-5AA19539BBCE5DDF.jpg"
+                    src="https://picsum.photos/id/1021/900/900"
                     alt="sunrise"
                 />
                 <div className={styles.overlay}>
@@ -42,7 +47,7 @@ const HomeCarousel = () => {
             </div>
             <div className="item">
                 <img className={styles.image}
-                    src="https://d2rdb56lmj4es2.cloudfront.net/data/photo/2019/3/28/0328192-2590-FCBD-5A018FCFA66A0706.jpg"
+                    src="https://picsum.photos/id/1060/900/900"
                     alt="road2"
                 />
                 <div className={styles.overlay}>
