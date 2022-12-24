@@ -1,0 +1,22 @@
+.contactusform__row {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.contactusform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contactusform__row___control {
+    width: 100%;
+    padding: 10px;
+}
+
+.contactusform__control__button {
+    padding: 10px
+}

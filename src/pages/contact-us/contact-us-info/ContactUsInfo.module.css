@@ -1,0 +1,24 @@
+.contactusinfo{
+    padding:10px;
+  
+}
+
+.contactusinfo__row{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contactusinfo__row div{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+.contactusinfo__item__header{
+    font : Tondo;
+    font-size: 14px;
+    font-weight: bold;
+}
+.contactusinfo__item__header___description{
+    text-align: start;
+}

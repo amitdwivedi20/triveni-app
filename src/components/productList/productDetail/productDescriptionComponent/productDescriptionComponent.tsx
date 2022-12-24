@@ -15,15 +15,19 @@ const ProductDescriptionComponent = () => {
             <div className={styles.productdescription__description___detail}>
                 <div>
                     <table>
+                        <tbody>
                         <tr><td className={styles.table_item__heading}>Material:</td> <td className={styles.table_item___data}>C.R. SHEET </td></tr>
                         <tr><td className={styles.table_item__heading}>Dimension(mm):</td> <td className={styles.table_item___data}>2010x915x530</td></tr>
                         <tr><td className={styles.table_item__heading}>Gaurantee:</td> <td className={styles.table_item___data}>10 Years on Paint & Locks</td></tr>
                         <tr><td className={styles.table_item__heading}>Avaiable Type of Paint:</td> <td className={styles.table_item___data}>Powder Coated, Metallic Finish</td></tr>
+                        </tbody>
                     </table>
 
                     <table>
+                    <tbody>
                         <tr><td className={styles.table_item__heading___color}>Body Color</td><td className={styles.table_item___data}><span className={styles.dot}></span> <span className={styles.dot}></span></td></tr>
                         <tr><td className={styles.table_item__heading___color}>Door Color</td><td className={styles.table_item___data}><span className={styles.dot}></span> <span className={styles.dot}></span></td></tr>
+                        </tbody>
                     </table>
 
                 </div>

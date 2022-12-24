@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'Tondo';
+  font-weight: 900;
+  src: local('Tondo'), url(./assets/tondo/tondo.ttf) format('truetype');
+}
 .App {
   text-align: center;
+  font: Tondo;
 }
 
 .footer-section{
