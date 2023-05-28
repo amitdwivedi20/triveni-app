@@ -1,3 +1,5 @@
+import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+
 export const products = [
     {
         'id': 1,
@@ -72,10 +74,46 @@ export const products = [
 
 
 export const routeUrlList = [
-    {'name' : 'Home', 'url' : ''},
-    {'name' : 'Products', 'url' : 'products'},
-    {'name' : 'About Us', 'url' : 'aboutus'},
-    {'name' : 'Awards and Recognitions', 'url' : 'awardsandrecognitions'},
-    {'name' : 'contact Us', 'url' : 'contactus'}
+    { 'name': 'Home', 'url': '' },
+    { 'name': 'Products', 'url': 'products' },
+    { 'name': 'About Us', 'url': 'aboutus' },
+    { 'name': 'Awards and Recognitions', 'url': 'awardsandrecognitions' },
+    { 'name': 'contact Us', 'url': 'contactus' },
+    { 'name': 'Admin', 'url': 'admin' }
 ]
+
+export interface IProduct {
+    productName: string;
+    active: boolean;
+    descriptionId: string;
+    cost: string;
+}
+
+export const ProductColumns: GridColDef[] = [
+    { field: 'productId', headerName: 'ID', width: 90 },
+    {
+      field: 'productName',
+      headerName: 'Product name',
+      width: 150,
+      editable: true,
+    },
+    {
+      field: 'cost',
+      headerName: 'Cost (INR)',
+      width: 150,
+      editable: true,
+    },
+    {
+        field: 'active',
+        headerName: 'Is Active',
+        width: 150,
+        editable: true,
+      },
+      {
+        field: 'action',
+        headerName: 'Actions',
+        width: 150,
+        editable: true,
+      }
+  ];
 

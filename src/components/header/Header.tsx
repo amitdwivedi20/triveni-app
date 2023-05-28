@@ -21,7 +21,7 @@ import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText } from '@
 
 const drawerWidth = '100%';
 const pages = routeUrlList;
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout','Admin'];
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.

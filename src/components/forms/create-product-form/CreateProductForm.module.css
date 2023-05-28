@@ -1,0 +1,18 @@
+.create_product_form__root{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form__row{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.form__row___control{
+    width: 100%;
+    padding: 10px;
+}
