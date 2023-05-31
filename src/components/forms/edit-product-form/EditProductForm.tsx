@@ -1,10 +1,9 @@
 import { Button, FormControl, TextField } from '@mui/material';
-import styles from './CreateProductForm.module.css';
-import { FormEvent, SetStateAction, useRef, useState } from 'react';
+import styles from './EditProductForm.module.css';
+import { FormEvent, SetStateAction, useState } from 'react';
 import { IProduct } from '../../../DataMock/data';
-const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void; }) => {
 
-    
+const EditProductForm = (props:any) =>{
     const [name, setName] = useState('');
     const [type, setType] = useState('');
     const [description, setDescription] = useState('');
@@ -27,8 +26,6 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void; }) => 
     const priceInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
         setPrice(event.target.value)
     }
-
-    
     const onCreateFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
         try {
             event.preventDefault();
@@ -49,9 +46,9 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void; }) => 
             throw new Error('Error On Submission of form')
         }
     }
-
-    return (
-        <div className={styles.create_product_form__root}>
+    
+    return(
+        <div className={styles.edit_product_form__root}>
             <form onSubmit={onCreateFormSubmit}>
                 <label className={styles.create_product_form_label}>Basic Details Section</label>
                 <div className={styles.form__row}>
@@ -122,14 +119,11 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void; }) => 
                 </div>
 
                 <div className={styles.form__row}>
-                <FormControl className={styles.form__row___control}>
-                        <Button variant="contained" type="submit">Reset</Button>
-                    </FormControl>
                     <FormControl className={styles.form__row___control}>
                         <Button variant="contained" type="submit">Cancel</Button>
                     </FormControl>
                     <FormControl className={styles.form__row___control}>
-                        <Button variant="contained" type="submit">Submit</Button>
+                        <Button variant="contained" type="submit">Update</Button>
                     </FormControl>
 
                 </div>
@@ -137,5 +131,4 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void; }) => 
         </div>
     )
 }
-
-export default CreateProductForm;
+export default EditProductForm;

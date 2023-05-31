@@ -1,17 +1,19 @@
 import Box from '@mui/material/Box';
-import { DataGrid, GridColDef, GridRowId, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRenderCellParams, GridRowId, GridValueGetterParams } from '@mui/x-data-grid';
 import styles from './DataTable.module.css';
+import { Button } from '@mui/material';
 
 const DataTable = (props: {
     idKey: GridRowId; data: readonly any[]; columns: GridColDef<any>[]; 
 }) => {
 
    
-      
+    
      
 
     return (
         <div className={styles.datatable_root}>
+            <Box>
             <DataGrid
                 rows={props.data}
                 columns={props.columns}
@@ -27,6 +29,7 @@ const DataTable = (props: {
                 checkboxSelection
                 disableRowSelectionOnClick
             />
+            </Box> 
         </div >
     )
 }

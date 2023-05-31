@@ -18,6 +18,7 @@ const ProductDetails = React.lazy(() => import('./pages/product-detail/ProductDe
 const Login = React.lazy(() => import('./pages/login/Login'));
 const AdminPanel = React.lazy(() => import('./pages/admin-panel/AdminPanel'));
 const CreateProduct = React.lazy(() => import('./pages/admin-panel/create-product/CreateProduct'));
+const EditProduct = React.lazy(() => import('./pages/admin-panel/edit-product/EditProduct'));
 
 const App = (props: any) => {
   return (
@@ -36,6 +37,7 @@ const App = (props: any) => {
             <Route path="/products/:productId" element={<ProductDetails />} />
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="/admin/createproduct" element={<CreateProduct />} />
+            <Route path="/admin/editproduct" element={<EditProduct />} />
           </Routes>
         </Suspense>
         <Footer />

@@ -1,4 +1,5 @@
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Button } from "@mui/material";
+import { GridColDef, GridRenderCellParams, GridValueGetterParams } from "@mui/x-data-grid";
 
 export const products = [
     {
@@ -114,6 +115,7 @@ export const ProductColumns: GridColDef[] = [
         headerName: 'Actions',
         width: 150,
         editable: true,
+      
       }
   ];
 
