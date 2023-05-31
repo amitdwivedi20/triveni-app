@@ -21,11 +21,11 @@ const DataTable = (props: {
                 initialState={{
                     pagination: {
                         paginationModel: {
-                            pageSize: 5,
+                            pageSize: 6,
                         },
                     },
                 }}
-                pageSizeOptions={[5]}
+                pageSizeOptions={[6]}
                 checkboxSelection
                 disableRowSelectionOnClick
             />
