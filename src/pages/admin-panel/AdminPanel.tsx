@@ -88,7 +88,8 @@ const AdminPanel = (props: any) => {
                 </div>
                 <div className={styles.admin_dashboard__header__item}>                     
                     <Button variant="contained" size="small" startIcon={<AddIcon />} onClick={onClickItem}>
-                         Create Product</Button>                    
+                        Product
+                    </Button>                    
                 </div>
             </div>
             <div>

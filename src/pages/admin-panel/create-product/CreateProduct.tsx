@@ -35,7 +35,7 @@ const CreateProduct = () => {
         <div className={styles.createproduct__root}>
             <div className={styles.admin_dashboard__header}>
                 <div className={styles.admin_dashboard__header__item}>
-                    <h2>Add or Create Product</h2>
+                    <h2>Create Product</h2>
                 </div>
                 <div className={styles.admin_dashboard__header__item}>                     
                     <Button size="small" startIcon={<ArrowBackSharpIcon />} onClick={onClickBack}>

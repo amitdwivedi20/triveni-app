@@ -20,20 +20,20 @@ const Product = (props: any) => {
                 <CardMedia
                     component="img"
                     className={styles.card_img}
-                    image={product.img}
-                    alt="green iguana"
+                    image={'https://picsum.photos/200'}
+                    alt="product Image"
                 />
                 <Box sx={{ display: 'flex', flexDirection: 'column' ,flexGrow:'3'}}>
                 <CardContent sx={{ display: 'flex', flexDirection: 'column', textAlign: 'start' }}>
                     <Typography gutterBottom variant="h5" component="div" className= {styles.product__productname}>
-                    {product.name}
+                    {product.productName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                       {product.description}
+                       {product.descriptionId}
                     </Typography>
-                    <Typography className={styles.product__description__List}>
+                    {/* <Typography className={styles.product__description__List}>
                         {product.descriptionList.map((description: string,index:number) => <li key={index}>{description}</li>)}
-                    </Typography>
+                    </Typography> */}
                 </CardContent>
                 </Box>
 
