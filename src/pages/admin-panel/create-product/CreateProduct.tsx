@@ -6,20 +6,17 @@ import styles from './CreateProduct.module.css';
 import { Button } from '@mui/material';
 import ArrowBackSharpIcon from '@mui/icons-material/ArrowBackSharp';
 import { useNavigate } from 'react-router-dom';
+import { postApi } from '../../../services/common-service/CommonService';
+import { createProduct } from '../../../services/product-service/ProductService';
+
 const CreateProduct = () => {
 
     const navigate = useNavigate();
     const onSubmitActionHandler = (arg0: IProduct): void => {
         let url = 'http://localhost:8080/api/v1/product/create';
         try {
-            console.log('Form Submitted --', arg0);
-            fetch(url,{
-                method: 'POST',
-                body: JSON.stringify(arg0),
-                headers:{
-                    'Content-Type' : 'application/json'
-                }
-            }).then((res)=> {
+            console.log('Form Submitted --', arg0);            
+            createProduct(arg0).then((res)=> {
                 console.log(res)
             })
             
