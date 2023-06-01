@@ -13,13 +13,12 @@ const CreateProduct = () => {
 
     const navigate = useNavigate();
     const onSubmitActionHandler = (arg0: IProduct): void => {
-        let url = 'http://localhost:8080/api/v1/product/create';
+        //let url = 'http://localhost:8080/api/v1/product/create';
         try {
             console.log('Form Submitted --', arg0);            
             createProduct(arg0).then((res)=> {
                 console.log(res)
-            })
-            
+            })            
         } catch (error) {
             throw new Error('OnSubmitForm Error ');
         }

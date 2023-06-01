@@ -8,6 +8,7 @@ export const AppConstants = {
         serverUrl: 'http://localhost:8080/',
         baseUrl: 'api/v1/',
         getAllProduct: 'product/getAll',
-        createProduct: 'product/create'
+        createProduct: 'product/create',
+        deleteProduct: 'product/delete/'
     }
 }

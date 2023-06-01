@@ -86,8 +86,14 @@ export const routeUrlList = [
 export interface IProduct {
     productName: string;
     active: boolean;
-    descriptionId: string;
     cost: string;
+    material: string;
+    dimensions : string;
+    colors: string;
+    bodyColor: string;
+    doorColor: string;
+    description: string;
+    descriptionDetails: string;
 }
 
 export const ProductColumns: GridColDef[] = [
@@ -118,4 +124,5 @@ export const ProductColumns: GridColDef[] = [
       
       }
   ];
+
 

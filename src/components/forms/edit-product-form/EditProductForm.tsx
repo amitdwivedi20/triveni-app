@@ -33,8 +33,14 @@ const EditProductForm = (props:any) =>{
             let data: IProduct = {
                 productName: name,
                 active: true,
-                descriptionId: description,
-                cost: price
+                cost: price,
+                material: '',
+                dimensions: '',
+                colors: '',
+                bodyColor: '',
+                doorColor: '',
+                description: '',
+                descriptionDetails: ''
             }
             props.submitForm(data)
             setName('');
