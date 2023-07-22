@@ -34,7 +34,8 @@ export function updateProduct() {
 /**
  * Delete Product
  */
-export function deleteProduct(id: string, reqBody: any = null) {
+export async function deleteProduct(id: string, reqBody: any = null) {
   let url = AppConstants.apiUrls.serverUrl + AppConstants.apiUrls.baseUrl + AppConstants.apiUrls.deleteProduct + id;
-  return postApi(url, reqBody)
+  const data = await postApi(url, reqBody);
+  return await data.json();
 }

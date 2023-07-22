@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ProductList from '../../components/productList/ProductList';
-import { products } from '../../DataMock/data';
+import { ICommonResponse, products } from '../../DataMock/data';
 
 import styles from './Products.module.css';
 import { useEffect, useState } from 'react';
@@ -13,10 +13,10 @@ const Products = () => {
     
     useEffect(()=>{
         try {
-            getProductList().then((res)=>{
+            getProductList().then((res:ICommonResponse)=>{
                 console.log('res product poage',res);
-                setProducts(res);
-                if(res.length){
+                setProducts(res.result);
+                if(res.result.length){
                     setShowProductList(true);
                 }else{
                     setShowProductList(false);

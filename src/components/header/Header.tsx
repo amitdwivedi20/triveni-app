@@ -15,13 +15,14 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import CloseIcon from '@mui/icons-material/Close';
 //import AdbIcon from '@mui/icons-material/Adb';
 import styles from './Header.module.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { routeUrlList } from '../../DataMock/data';
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { getAuthToken, logoutUser } from '../../util/Auth';
 
 const drawerWidth = '100%';
 const pages = routeUrlList;
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout','Admin'];
+const settings = ['Profile', 'Logout'];
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -32,7 +33,9 @@ interface Props {
 const Header = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const token = getAuthToken();
+  const navigate = useNavigate();
+  
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -54,6 +57,14 @@ const Header = (props: Props) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const handleAction = (event: any) => {
+    console.log(event);
+    if(event.target.innerText.toLowerCase() === 'logout'){
+      logoutUser();
+      navigate(`/`);
+    }
+  }
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
@@ -209,36 +220,38 @@ const Header = (props: Props) => {
                 </Button>
               ))}
             </Box>
-
-            {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+                {token && (
+                  <Box sx={{ flexGrow: 0 }}>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: '45px' }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    {settings.map((setting) => (
+                      <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                        <Typography textAlign="center" onClick={handleAction}>{setting}</Typography>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </Box> 
+                )}
+            
           </Toolbar>
         </Container>
       </AppBar>

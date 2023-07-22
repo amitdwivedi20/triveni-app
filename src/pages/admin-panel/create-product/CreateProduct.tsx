@@ -1,23 +1,34 @@
 
 import { useState, useEffect } from 'react';
-import { IProduct } from '../../../DataMock/data';
+import { ICommonResponse, IProduct } from '../../../DataMock/data';
 import CreateProductForm from '../../../components/forms/create-product-form/CreateProductForm';
 import styles from './CreateProduct.module.css';
 import { Button } from '@mui/material';
 import ArrowBackSharpIcon from '@mui/icons-material/ArrowBackSharp';
 import { useNavigate } from 'react-router-dom';
-import { postApi } from '../../../services/common-service/CommonService';
 import { createProduct } from '../../../services/product-service/ProductService';
+import { AppConstants } from '../../../constants';
+import NotificationComponent from '../../../components/notification/NotificationComponent';
 
 const CreateProduct = () => {
-
+    const [open, setOpen] = useState(false);
+    const [reset, setReset] = useState(false);
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
+
     const onSubmitActionHandler = (arg0: IProduct): void => {
-        //let url = 'http://localhost:8080/api/v1/product/create';
         try {
             console.log('Form Submitted --', arg0);            
-            createProduct(arg0).then((res)=> {
-                console.log(res)
+            createProduct(arg0).then((res:ICommonResponse)=> {
+                console.log(res);
+                if(res && res.result && res.status == AppConstants.statusCodes.status201){
+                    console.log(res.message);
+                    setMessage(res.message);
+                    setOpen(true);
+                    setReset(true);
+                }else{
+
+                }
             })            
         } catch (error) {
             throw new Error('OnSubmitForm Error ');
@@ -30,6 +41,11 @@ const CreateProduct = () => {
         navigate(`/admin`)
     }
 
+    const handleNotificationClose = () => {
+        setOpen(false);
+    }
+
+    
     return (
         <div className={styles.createproduct__root}>
             <div className={styles.admin_dashboard__header}>
@@ -42,7 +58,8 @@ const CreateProduct = () => {
                 </div>
             </div>
 
-            <CreateProductForm submitForm={onSubmitActionHandler}/>
+            <CreateProductForm submitForm={onSubmitActionHandler} resetForm={reset}/>
+            <NotificationComponent open={open} handleClose={handleNotificationClose} message={message}/>
         </div>
     )
 }

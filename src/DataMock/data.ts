@@ -126,3 +126,16 @@ export const ProductColumns: GridColDef[] = [
   ];
 
 
+  export interface IUser{
+    username: string;
+    password: string;
+    active?: boolean;
+  }
+
+  export interface ICommonResponse {
+    message: string;
+    result: any;
+    status: number;
+  }
+
+

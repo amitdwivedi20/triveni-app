@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridRenderCellParams, GridRowId, GridValueGetterParams } from '@mui/x-data-grid';
 import styles from './DataTable.module.css';
-import { Button } from '@mui/material';
 
 const DataTable = (props: {
     idKey: GridRowId; data: readonly any[]; columns: GridColDef<any>[]; 
@@ -17,7 +16,7 @@ const DataTable = (props: {
             <DataGrid
                 rows={props.data}
                 columns={props.columns}
-                getRowId={(row: any) =>  row.productId + row.productName}
+                getRowId={(row: any) =>  row.productid + row.productName}
                 initialState={{
                     pagination: {
                         paginationModel: {

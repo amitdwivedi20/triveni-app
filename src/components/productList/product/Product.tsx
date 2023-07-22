@@ -29,7 +29,7 @@ const Product = (props: any) => {
                     {product.productName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                       {product.descriptionId}
+                       {product.description}
                     </Typography>
                     {/* <Typography className={styles.product__description__List}>
                         {product.descriptionList.map((description: string,index:number) => <li key={index}>{description}</li>)}
