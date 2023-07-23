@@ -7,7 +7,7 @@ export const AppConstants = {
     apiUrls:{
         //serverUrl: 'http://localhost:8080/',
         serverUrl: 'https://13.250.116.70:8443/app-0.0.1-SNAPSHOT/',
-        serverlUrlProd: 'http://13.250.116.70:8443/app-0.0.1-SNAPSHOT/',
+        serverlUrlProd: 'https://13.250.116.70:8443/app-0.0.1-SNAPSHOT/',
         baseUrl: 'api/v1/',
         getAllProduct: 'product/get-all',
         createProduct: 'product/create',
