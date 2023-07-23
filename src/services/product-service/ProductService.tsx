@@ -1,5 +1,5 @@
 import { AppConstants } from "../../constants"
-import { getApi, postApi } from "../common-service/CommonService";
+import { getApi, getApiWithAuth, postApi } from "../common-service/CommonService";
 
 
 /**
@@ -9,6 +9,17 @@ import { getApi, postApi } from "../common-service/CommonService";
  */
 export async function getProductList() {
   let url = AppConstants.apiUrls.serverUrl + AppConstants.apiUrls.baseUrl + AppConstants.apiUrls.getAllProduct;
+  const data = await getApi(url);
+  return await data.json();
+}
+
+/**
+ * 
+ * @returns Promise
+ * Product Based On ID
+ */
+export async function getProductById(id: string) {
+  let url = AppConstants.apiUrls.serverUrl + AppConstants.apiUrls.baseUrl + AppConstants.apiUrls.getProductById + id;
   const data = await getApi(url);
   return await data.json();
 }

@@ -40,7 +40,7 @@ const App = (props: any) => {
             <Route path="/products/:productId" element={<ProductDetails />} />
             <Route path="/admin" element={<AdminPanel />} loader={checkAuthLoader}/>
             <Route path="/admin/createproduct" element={<CreateProduct />} loader={checkAuthLoader} />
-            <Route path="/admin/editproduct" element={<EditProduct />} loader={checkAuthLoader} />
+            <Route path="/admin/editproduct/:id" element={<EditProduct />} loader={checkAuthLoader} />
           </Routes>
         </Suspense>
         <Footer />

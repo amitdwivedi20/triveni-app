@@ -9,7 +9,7 @@ const Product = (props: any) => {
     const onClickItem: any = async () => {
         console.log(props.product.id);
         
-        navigate(`/products/${props.product.id}`)
+        navigate(`/products/${props.product.productid}`)
     }
     //console.log(props.product);
     const product = props.product;

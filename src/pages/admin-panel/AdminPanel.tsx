@@ -20,7 +20,7 @@ const AdminPanel = (props: any) => {
   useEffect(() => {
     try {
       if (localStorage.getItem('isuserloggedin') == "true") {
-        getProductList().then((res:ICommonResponse) => {
+        getProductList().then((res: ICommonResponse) => {
           console.log(res);
           if (res && res.status == AppConstants.statusCodes.status200) {
             setProductList(res.result)
@@ -126,7 +126,8 @@ const AdminPanel = (props: any) => {
 
   const editProductHandler = (event: any, params: any) => {
     console.log('Edit Item Clicked -- ', event, params);
-    navigate(`/admin/editproduct`);
+    let productId = params.row.productid;
+    navigate(`/admin/editproduct/${productId}`);
   }
 
   const deleteProductHandler = (event: any, params: any) => {
@@ -138,7 +139,7 @@ const AdminPanel = (props: any) => {
         setMessage(res.message);
         setOpen(true);
       } else {
-        
+
       }
     });
   }
@@ -160,7 +161,7 @@ const AdminPanel = (props: any) => {
       </div>
       <div>
         <DataTable data={productList} columns={ProductColumns} idKey="productId" />
-        <NotificationComponent open={open} handleClose={handleNotificationClose} message={message}/>
+        <NotificationComponent open={open} handleClose={handleNotificationClose} message={message} />
       </div>
 
     </div>

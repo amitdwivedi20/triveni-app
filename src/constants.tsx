@@ -12,6 +12,7 @@ export const AppConstants = {
         getAllProduct: 'product/get-all',
         createProduct: 'product/create',
         deleteProduct: 'product/delete/',
+        getProductById: 'product/get/',
         userLogin: 'user/login'
     },
     storageKeys: {

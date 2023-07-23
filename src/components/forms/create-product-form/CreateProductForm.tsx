@@ -2,7 +2,7 @@ import { Button, FormControl, TextField } from '@mui/material';
 import styles from './CreateProductForm.module.css';
 import { FormEvent, SetStateAction, useEffect, useRef, useState } from 'react';
 import { IProduct } from '../../../DataMock/data';
-const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetForm: any}) => {
+const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetForm: any }) => {
 
 
     const [name, setName] = useState('');
@@ -63,21 +63,21 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
                 description: description,
                 descriptionDetails: descriptionDetails
             }
-            props.submitForm(data);    
+            props.submitForm(data);
         } catch (error) {
             throw new Error('Error On Submission of form')
         }
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         resetFormControls();
-    },[props.resetForm])
+    }, [props.resetForm])
 
     const onClickResetHandler = () => {
         resetFormControls();
     }
     const resetFormControls = () => {
-        setName('');        
+        setName('');
         setPrice('');
         setColors('');
         setDimensions('');
@@ -85,7 +85,7 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
         setBodyColor('');
         setDoorColor('');
         setDescription('');
-        setDescriptionDetails('');  
+        setDescriptionDetails('');
     }
     return (
         <div className={styles.create_product_form__root}>
@@ -93,13 +93,13 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
                 <label className={styles.create_product_form_label}>Basic Details Section</label>
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Name of Product" variant="outlined" onChange={nameInputChangeHandler} value={name} />
+                        <TextField required label="Name of Product" variant="outlined" onChange={nameInputChangeHandler} value={name} />
                     </FormControl>
                 </div>
 
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Price" variant="outlined" onChange={priceInputChangeHandler} value={price} />
+                        <TextField required label="Price" variant="outlined" onChange={priceInputChangeHandler} value={price} />
                     </FormControl>
                 </div>
 
@@ -107,41 +107,41 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
 
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Material" variant="outlined" onChange={materialInputChangeHandler} value={material} />
+                        <TextField required label="Material" variant="outlined" onChange={materialInputChangeHandler} value={material} />
                     </FormControl>
                 </div>
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="dimensions" variant="outlined" onChange={dimensionsInputChangeHandler} value={dimensions} />
-                    </FormControl>
-                </div>
-
-                <div className={styles.form__row}>
-                    <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Color" variant="outlined" onChange={colorsInputChangeHandler} value={colors} />
-                    </FormControl>
-                </div>
-                <div className={styles.form__row}>
-                    <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Body Color" variant="outlined" onChange={bodyColorInputChangeHandler} value={bodyColor} />
-                    </FormControl>
-                </div>
-                <div className={styles.form__row}>
-                    <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Door Color" variant="outlined" onChange={doorColorInputChangeHandler} value={doorColor} />
-                    </FormControl>
-                </div>
-
-
-                <div className={styles.form__row}>
-                    <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Description" variant="outlined" onChange={descriptionInputChangeHandler} value={description} />
+                        <TextField required label="dimensions" variant="outlined" onChange={dimensionsInputChangeHandler} value={dimensions} />
                     </FormControl>
                 </div>
 
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required id="outlined-basic" label="Description Details" variant="outlined" onChange={descriptionDetailsInputChangeHandler} value={descriptionDetails} />
+                        <TextField required label="Color" variant="outlined" onChange={colorsInputChangeHandler} value={colors} />
+                    </FormControl>
+                </div>
+                <div className={styles.form__row}>
+                    <FormControl className={styles.form__row___control}>
+                        <TextField required label="Body Color" variant="outlined" onChange={bodyColorInputChangeHandler} value={bodyColor} />
+                    </FormControl>
+                </div>
+                <div className={styles.form__row}>
+                    <FormControl className={styles.form__row___control}>
+                        <TextField required label="Door Color" variant="outlined" onChange={doorColorInputChangeHandler} value={doorColor} />
+                    </FormControl>
+                </div>
+
+
+                <div className={styles.form__row}>
+                    <FormControl className={styles.form__row___control}>
+                        <TextField required label="Description" variant="outlined" onChange={descriptionInputChangeHandler} value={description} />
+                    </FormControl>
+                </div>
+
+                <div className={styles.form__row}>
+                    <FormControl className={styles.form__row___control}>
+                        <TextField required label="Description Details" variant="outlined" onChange={descriptionDetailsInputChangeHandler} value={descriptionDetails} />
                     </FormControl>
                 </div>
 
