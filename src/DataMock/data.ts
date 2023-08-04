@@ -88,54 +88,65 @@ export interface IProduct {
     active: boolean;
     cost: string;
     material: string;
-    dimensions : string;
+    dimensions: string;
     colors: string;
     bodyColor: string;
     doorColor: string;
     description: string;
-    descriptionDetails: string;
+    keyFeatures: string;
+    aboutProduct: string;
+    gaurantee: string;
+    modelType: string;
+    modelWidth: string;
+    doorsCount: string;
+    availablePaintType: string;
+    
+}
+
+export interface IProductUpdate extends IProduct{
+    productid: string;
 }
 
 export const ProductColumns: GridColDef[] = [
     { field: 'productId', headerName: 'ID', width: 90 },
     {
-      field: 'productName',
-      headerName: 'Product name',
-      width: 150,
-      editable: true,
+        field: 'productName',
+        headerName: 'Product name',
+        width: 150,
+        editable: true,
     },
     {
-      field: 'cost',
-      headerName: 'Cost (INR)',
-      width: 150,
-      editable: true,
+        field: 'cost',
+        headerName: 'Cost (INR)',
+        width: 150,
+        editable: true,
     },
     {
         field: 'active',
         headerName: 'Is Active',
         width: 150,
         editable: true,
-      },
-      {
+    },
+    {
         field: 'action',
         headerName: 'Actions',
         width: 150,
         editable: true,
-      
-      }
-  ];
+
+    }
+];
 
 
-  export interface IUser{
+export interface IUser {
     username: string;
     password: string;
     active?: boolean;
-  }
+}
 
-  export interface ICommonResponse {
+export interface ICommonResponse {
     message: string;
     result: any;
     status: number;
-  }
+}
 
 

@@ -31,6 +31,7 @@ const Products = () => {
         
     return (
         <div className={styles.products}>
+            
             {showProductList && <ProductList productList={productList}/>}
         </div>
     )

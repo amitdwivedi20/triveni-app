@@ -5,12 +5,13 @@ export const AppConstants = {
         resetCreateProduct : 'Reset_Create_Product_Form'
     },
     apiUrls:{
-        //serverUrl: 'http://localhost:8080/',
+        //serverUrl: 'https://localhost:8443/',
         serverUrl: 'https://13.250.116.70:8443/app-0.0.1-SNAPSHOT/',
         serverlUrlProd: 'https://13.250.116.70:8443/app-0.0.1-SNAPSHOT/',
         baseUrl: 'api/v1/',
         getAllProduct: 'product/get-all',
         createProduct: 'product/create',
+        updateProduct: 'product/update',
         deleteProduct: 'product/delete/',
         getProductById: 'product/get/',
         userLogin: 'user/login'

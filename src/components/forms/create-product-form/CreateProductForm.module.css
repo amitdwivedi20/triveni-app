@@ -26,3 +26,11 @@
     padding: 10px;
     color: #1976d2;
 }
+.add__new__control{
+    display: flex;
+    justify-content: end;
+    
+}
+.form__row__btn{
+    padding: 0 10px;
+}

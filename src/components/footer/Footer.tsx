@@ -1,10 +1,11 @@
 import React from "react";
 import styles from './Footer.module.css';
 import CopyrightIcon from '@mui/icons-material/Copyright';
+import { Divider } from "@mui/material";
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-
+            <Divider variant='middle' className="common_divider"/>
             <div className={styles.footer__main__container}>
                 <div className={styles.footer_nav}>
                     <div className={styles.footer_nav__content}>

@@ -1,29 +1,106 @@
-.product{
-    padding: 5px;
+.product {
+    padding: 20px;
     cursor: pointer;
+    min-height: 250px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -ms-flex-line-pack: stretch;
 }
 
-.card_img{
-    height:180px;
-    width: 150px;
-    padding:5px;
+.card_img {
+    padding: 15px;
+    width: auto;
+    padding: 15px;
 }
 
-.product_card__action{
+.product_card__action {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.product__productname{
+.product__productname {
     font-weight: 600;
 
 }
 
-.product__productname:hover{
+.product__productname:hover {
     color: #1976d2;
     cursor: pointer;
 }
 
-.product__description__List{
+.product__description__List {
     font-size: 10px;
+}
+
+.product__content {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.product_description_section{
+    max-width: 300px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display: -webkit-box; */
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+    min-height: 40px;
+}
+
+.price_symbol{
+    top: -0.75em;
+    font-size: 13px;
+    position: relative;
+}
+
+.font_28{
+    font-size: 28px;
+    color:#0F1111;
+}
+.product_description_section__keyfeatures{
+    font-size: 13px;
+    font-weight: 600;
+    
+}
+
+@media screen and (min-width: 1024px) {}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .product{
+        padding: 5px;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .productList_content{
+        flex-basis:100%;
+    }
+    .filter_section{
+        display: none!important;
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+
 }

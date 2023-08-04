@@ -18,9 +18,9 @@ const CreateProduct = () => {
 
     const onSubmitActionHandler = (arg0: IProduct): void => {
         try {
-            console.log('Form Submitted --', arg0);            
+            //console.log('Form Submitted --', arg0);            
             createProduct(arg0).then((res:ICommonResponse)=> {
-                console.log(res);
+                //console.log(res);
                 if(res && res.result && res.status == AppConstants.statusCodes.status201){
                     console.log(res.message);
                     setMessage(res.message);

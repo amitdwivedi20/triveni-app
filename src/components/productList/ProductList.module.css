@@ -1,0 +1,133 @@
+.productlist_root {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.productlist_root div.filter_section {
+    display: flex;
+    flex-basis: 20%;
+}
+
+.productList_section {
+    display: flex;
+    flex-basis: 80%;
+    flex-wrap: wrap;
+}
+.productList_content{
+    flex-basis: 33.33%;
+}
+
+.filter_section__mobile___content{
+    
+}
+.filter_section__mobile{
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    min-height: 3rem;
+}
+
+.searchFilterBox{
+
+}
+
+.s_mobile_toolbar_sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    overflow-x: hidden;
+    transition: transform .2s linear;
+    display: flex;
+    min-height: 3rem;
+}
+.filter_section__mobile___content___item__searchFilterBox{
+    flex-basis: 70%;
+    
+}
+.filter_section__mobile___content___item__filters{
+    flex-basis: 30%;
+    /* margin: auto; */
+    box-shadow: inset 1px 0 0 0 #e6e6e6;
+}
+.filter_section__mobile___content___item__filters__content{
+    margin: 0 auto;
+}
+.filter__arowdownicon{
+    vertical-align: middle;
+}
+
+.nav_mobile__close{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .productList_content{
+        flex-basis:33.33%;
+    }
+    .filter_section{
+        display: block!important;
+    }
+    .filter_section__mobile{
+        display: none!important;
+    }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .productList_content{
+        flex-basis:33.33%;
+    }
+    .filter_section{
+        display: block!important;
+    }
+    .filter_section__mobile{
+        display: none!important;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .productList_content{
+        flex-basis:100%;
+    }
+    .filter_section{
+        display: none!important;
+    }
+    .productList_section{
+        margin: auto;
+    }
+    .productList_section{
+        flex-basis:100%;
+    }
+    .productlist_root{
+        flex-direction: column;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .productList_content{
+        flex-basis:100%;
+    }
+    .filter_section{
+        display: none!important;
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+
+}

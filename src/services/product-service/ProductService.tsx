@@ -38,8 +38,10 @@ export async function createProduct(reqBody: any) {
 /**
  * Updates Product
  */
-export function updateProduct() {
-
+export async function updateProduct(reqBody:any) {
+  let url = AppConstants.apiUrls.serverUrl + AppConstants.apiUrls.baseUrl + AppConstants.apiUrls.updateProduct;
+  const data = await postApi(url, reqBody);
+  return await data.json();
 }
 
 /**
@@ -49,4 +51,22 @@ export async function deleteProduct(id: string, reqBody: any = null) {
   let url = AppConstants.apiUrls.serverUrl + AppConstants.apiUrls.baseUrl + AppConstants.apiUrls.deleteProduct + id;
   const data = await postApi(url, reqBody);
   return await data.json();
+}
+
+export function getListValueForForm(dataString: string = '[]', keyStr: string){
+  let str;
+  let strArray: any = [];
+  try {
+      str = JSON.parse(dataString);
+      if (str && str.length) {
+          str.forEach((element: string) => {
+              let obj: { [key: string]: string } = {};
+              obj[keyStr] = element;
+              strArray.push(obj);
+          });
+      }
+  } catch (error) {
+      console.log('error while parsing List Form Value --', error)
+  }
+  return strArray;
 }
