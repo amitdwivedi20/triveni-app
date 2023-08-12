@@ -14,16 +14,16 @@ const Home = () => {
                     लाडली बिटिया की गृहस्थी में निपटाऊ नहीं टिकाऊ
                 </h4>
             </div>
-            <section className={styles.homePage__section__1}>                
-                <HomeCarousel/>
+            <section className={styles.homePage__section__1}>
+                <HomeCarousel />
             </section>
 
             <section className={styles.homePage__section__Model}>
                 <h1 className={styles.homePage__section__Model___title}>Models</h1>
-                <Model/>
+                <Model />
             </section>
             <section className={styles.homePage__section}>
-            <div className='animate__animated animate__fadeInUp' >
+                <div className='animate__animated animate__fadeInUp' >
                     <h1>Coming Soon...</h1>
                     <h2>Dev in progress..</h2>
                 </div>
@@ -32,18 +32,18 @@ const Home = () => {
             <section className={styles.carousel__section}>
                 <CarouselComponent />
             </section>
-            <section className={styles.homePage__section}>
-            <div className='animate__animated animate__fadeInUp' >
+            {/* <section className={styles.homePage__section}>
+                <div className='animate__animated animate__fadeInUp' >
                     <h1>Coming Soon...</h1>
                     <h2>Dev in progress..</h2>
                 </div>
             </section>
             <section className={styles.homePage__section}>
-            <div className='animate__animated animate__fadeInUp' >
+                <div className='animate__animated animate__fadeInUp' >
                     <h1>Coming Soon...</h1>
                     <h2>Dev in progress..</h2>
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }

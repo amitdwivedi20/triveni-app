@@ -12,6 +12,8 @@ import { AppConstants } from '../../constants';
 import NotificationComponent from '../../components/notification/NotificationComponent';
 import { ICommonResponse } from '../../DataMock/data';
 import Loader from '../../components/loader/Loader';
+import ArrowBackSharpIcon from '@mui/icons-material/ArrowBackSharp';
+
 const AdminPanel = (props: any) => {
   const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
@@ -43,7 +45,7 @@ const AdminPanel = (props: any) => {
 
   const onClickItem: any = async (action: string) => {
     console.log(action)
-    navigate(`/admin/createproduct`)
+    navigate(`/admin/products/create`)
   }
 
   const ProductColumns: GridColDef[] = [
@@ -159,7 +161,7 @@ const AdminPanel = (props: any) => {
   const editProductHandler = (event: any, params: any) => {
     console.log('Edit Item Clicked -- ', event, params);
     let productId = params.row.productid;
-    navigate(`/admin/editproduct/${productId}`);
+    navigate(`/admin/products/edit/${productId}`);
   }
 
   const deleteProductHandler = (event: any, params: any) => {
@@ -195,12 +197,21 @@ const AdminPanel = (props: any) => {
   const handleNotificationClose = () => {
     setOpen(false);
   }
+
+  const onClickBack = () => {
+    navigate(`/admin`);
+  }
   return (
     <div className={styles.adminpanel_root}>
       {showLoader && <Loader />}
       <div className={styles.admin_dashboard__header}>
         <div className={styles.admin_dashboard__header__item}>
-          <h2>Dashboard</h2>
+          <Button size="small" startIcon={<ArrowBackSharpIcon />} onClick={onClickBack}>
+            Back</Button>
+
+        </div>
+        <div className={styles.admin_dashboard__header__item}>
+          <h2>Product Dashboard</h2>
         </div>
         <div className={styles.admin_dashboard__header__item}>
           <Button variant="outlined" size="small" startIcon={<AddIcon />} onClick={onClickItem}>

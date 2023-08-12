@@ -24,7 +24,7 @@ const CreateProduct = () => {
             setShowLoader(true);           
             createProduct(arg0).then((res:ICommonResponse)=> {
                 //console.log(res);
-                if(res && res.result && res.status == AppConstants.statusCodes.status201){
+                if(res && res.result && res.status === AppConstants.statusCodes.status201){
                     console.log(res.message);
                     setMessage(res.message);
                     setOpen(true);
@@ -42,7 +42,7 @@ const CreateProduct = () => {
 
     const onClickBack = () => {
         console.log('onclick onClickBack');
-        navigate(`/admin`)
+        navigate(`/admin/products`)
     }
 
     const handleNotificationClose = () => {

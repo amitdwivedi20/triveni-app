@@ -149,4 +149,35 @@ export interface ICommonResponse {
     status: number;
 }
 
+export const sampleDataHomepageTable = [
+    {
+        carouselId: '1',
+        header: 'This is test Item',
+        subHeader: 'This is subheader',
+        imgUrl: 'https://',
+        active: true
+    },
+    {
+        carouselId: '1',
+        header: 'This is test Item',
+        subHeader: 'This is subheader',
+        imgUrl: 'https://',
+        active: true
+    },
+    {
+        carouselId: '1',
+        header: 'This is test Item',
+        subHeader: 'This is subheader',
+        imgUrl: 'https://',
+        active: true
+    },
+    {
+        carouselId: '1',
+        header: 'This is test Item',
+        subHeader: 'This is subheader',
+        imgUrl: 'https://',
+        active: true
+    }
+]
+
 

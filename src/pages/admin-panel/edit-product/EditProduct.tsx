@@ -19,7 +19,7 @@ const EditProduct = () => {
     const [message, setMessage] = useState('');
     const [showLoader, setShowLoader] = useState(false);
     const onClickBack = () => {
-        navigate(`/admin`)
+        navigate(`/admin/products`)
     }
 
     useEffect(() => {

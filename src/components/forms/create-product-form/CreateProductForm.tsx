@@ -15,7 +15,6 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 
 
 const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetForm: any }) => {
-
     const bucketConfig = AppConstants.s3Config;
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -51,10 +50,6 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
         setPrice(event.target.value)
     }
 
-    // const dimensionsInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
-    //     setDimensions(event.target.value)
-    // }
-
     const gauranteeInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
         setGaurantee(event.target.value)
     }
@@ -65,10 +60,7 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
     const doorColorInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
         setDoorColor(event.target.value)
     }
-    // const descriptionDetailsInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
-    //     setDescriptionDetails(event.target.value)
-    // }
-
+   
     const materialInputChangeHandler = (event: { target: { value: SetStateAction<string>; }; }) => {
         setMaterial(event.target.value)
     }
@@ -89,7 +81,6 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
     const onCreateFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
         try {
             event.preventDefault();
-            //console.log(name, event);
             let data: IProduct = {
                 productName: name,
                 active: true,
@@ -146,20 +137,16 @@ const CreateProductForm = (props: { submitForm: (arg0: IProduct) => void, resetF
     }
 
     const onClickAddDescription = () => {
-        //console.log('Add Description clicked -- ');
         setKeyFeatureList([...keyFeatureList, { description: '' }])
     }
 
     const removeKeyfeatureControl = (event: any, index: number) => {
-        //console.log(event, index);
         const list = [...keyFeatureList];
         list.splice(index, 1);
         setKeyFeatureList(list);
     }
 
     const keyFeatureInputChangeHandler = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
-        //console.log(event, index);
-        //const { name, value } = event.target;
         const list = [...keyFeatureList];
         list[index].description = event.target.value;
         setKeyFeatureList(list);
