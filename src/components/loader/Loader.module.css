@@ -1,0 +1,4 @@
+.loader__root__container{
+    min-height: calc(95vh - 200px);
+    display: flex;
+}

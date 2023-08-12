@@ -11,11 +11,13 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import { AppConstants } from '../../constants';
 import NotificationComponent from '../../components/notification/NotificationComponent';
 import { ICommonResponse } from '../../DataMock/data';
+import Loader from '../../components/loader/Loader';
 const AdminPanel = (props: any) => {
   const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('');
+  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
     try {
@@ -161,17 +163,33 @@ const AdminPanel = (props: any) => {
   }
 
   const deleteProductHandler = (event: any, params: any) => {
-    console.log('Edit Item Clicked -- ', event, params.row.productid);
     let productId = params.row.productid;
+    setShowLoader(true);
     deleteProduct(productId).then((res: ICommonResponse) => {
-      console.log('res after delete', res);
       if (res && res.status == AppConstants.statusCodes.status200) {
         setMessage(res.message);
+        setShowLoader(false);
         setOpen(true);
+        getProductListUpdated();
       } else {
 
       }
+      setShowLoader(false);
     });
+  }
+
+  const getProductListUpdated = () => {
+    setShowLoader(true);
+    getProductList().then((res: ICommonResponse) => {
+      console.log(res);
+      if (res && res.status == AppConstants.statusCodes.status200) {
+        setProductList(res.result)
+      } else {
+        console.log('error while product fetch');
+      }
+      setShowLoader(false);
+    })
+    setShowLoader(false);
   }
 
   const handleNotificationClose = () => {
@@ -179,6 +197,7 @@ const AdminPanel = (props: any) => {
   }
   return (
     <div className={styles.adminpanel_root}>
+      {showLoader && <Loader />}
       <div className={styles.admin_dashboard__header}>
         <div className={styles.admin_dashboard__header__item}>
           <h2>Dashboard</h2>

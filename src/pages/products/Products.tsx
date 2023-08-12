@@ -5,6 +5,7 @@ import { ICommonResponse, products } from '../../DataMock/data';
 import styles from './Products.module.css';
 import { useEffect, useState } from 'react';
 import { getProductList } from '../../services/product-service/ProductService';
+import Loader from '../../components/loader/Loader';
 
 const Products = () => {
 
@@ -31,7 +32,7 @@ const Products = () => {
         
     return (
         <div className={styles.products}>
-            
+            {!showProductList && <Loader/>}
             {showProductList && <ProductList productList={productList}/>}
         </div>
     )

@@ -100,7 +100,7 @@ export interface IProduct {
     modelWidth: string;
     doorsCount: string;
     availablePaintType: string;
-    
+    imgUrl: string;    
 }
 
 export interface IProductUpdate extends IProduct{

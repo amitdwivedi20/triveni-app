@@ -42,7 +42,7 @@ const Product = (props: any) => {
                 <CardMedia
                     component="img"
                     className={styles.card_img}
-                    image={'https://picsum.photos/200'}
+                    image={product?.imgUrl}
                     alt="product Image"
                 />
                 <Box sx={{ display: 'flex', flexDirection: 'column', flexBasis: '33.33' }}>

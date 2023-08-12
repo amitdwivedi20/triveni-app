@@ -8,6 +8,7 @@ import { getProductById, updateProduct } from '../../../services/product-service
 import { AppConstants } from '../../../constants';
 import { ICommonResponse, IProduct, IProductUpdate } from '../../../DataMock/data';
 import NotificationComponent from '../../../components/notification/NotificationComponent';
+import Loader from '../../../components/loader/Loader';
 
 const EditProduct = () => {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ const EditProduct = () => {
     const { id } = useParams();
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
     const onClickBack = () => {
         navigate(`/admin`)
     }
@@ -23,6 +25,7 @@ const EditProduct = () => {
     useEffect(() => {
         try {
             if (id && id.length) {
+                setShowLoader(true);
                 getProductById(id).then((res: ICommonResponse) => {
                     if (res && res.status == AppConstants.statusCodes.status200) {
                         //setProductList(res.result);
@@ -37,6 +40,7 @@ const EditProduct = () => {
                     } else {
                         console.log('error while product fetch');
                     }
+                    setShowLoader(false);
 
                 });
             }
@@ -53,14 +57,17 @@ const EditProduct = () => {
             let reqObj: any = arg0;
             reqObj.productid = id;
             console.log('Form Submitted --', reqObj);
+            setShowLoader(true);
             updateProduct(reqObj).then((res: ICommonResponse) => {
                 console.log(res);
                 if (res && res.result && res.status == AppConstants.statusCodes.status200) {
                     console.log(res.message);
                     setMessage(res.message);
+                    navigate(`/admin`);
                 } else {
                     setMessage(res.message);
                 }
+                setShowLoader(false);
             })
         } catch (error) {
             throw new Error('On Update Form Error ');
@@ -73,6 +80,7 @@ const EditProduct = () => {
     }
     return (
         <div className={styles.edit_product_form__root}>
+            {showLoader && <Loader />}
             <div className={styles.admin_dashboard__header}>
                 <div className={styles.admin_dashboard__header__item}>
                     <h2>Edit Product</h2>

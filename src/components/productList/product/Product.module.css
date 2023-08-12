@@ -10,9 +10,10 @@
 }
 
 .card_img {
-    padding: 15px;
     width: auto;
     padding: 15px;
+    max-height: 250px;
+    object-fit: contain;
 }
 
 .product_card__action {

@@ -1,11 +1,20 @@
-import { Button, FormControl, IconButton, TextField, Tooltip } from '@mui/material';
+import { Button, FormControl, IconButton, InputLabel, MenuItem, Select, TextField, Tooltip } from '@mui/material';
 import styles from './EditProductForm.module.css';
 import { ChangeEvent, FormEvent, SetStateAction, useEffect, useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import { IProduct } from '../../../DataMock/data';
+import { MuiFileInput } from 'mui-file-input';
+import S3FileUpload from 'react-s3';
+import { uploadFile } from 'react-s3';
+import { deleteFile } from 'react-s3';
+import Loader from '../../loader/Loader';
+import { AppConstants } from '../../../constants';
+import ClearIcon from '@mui/icons-material/Clear';
+window.Buffer = window.Buffer || require("buffer").Buffer;
 
 const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: IProduct) => void; }) => {
+    const bucketConfig = AppConstants.s3Config;
     const [color, setColor] = useState('');
     const [price, setPrice] = useState('');
     const [product, setProduct] = useState(props.product);
@@ -15,7 +24,6 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
     const [bodyColor, setBodyColor] = useState('');
     const [doorColor, setDoorColor] = useState('');
     const [dimensions, setDimensions] = useState('');
-    //const [descriptionDetails, setDescriptionDetails] = useState('');
     const [material, setMaterial] = useState('');
     const [keyFeatureList, setKeyFeatureList] = useState([{ description: '' }]);
     const [aboutProductList, setAboutProductList] = useState([{ aboutProduct: '' }]);
@@ -27,6 +35,9 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
     const [modelWidth, setModelWidth] = useState('');
     const [doorsCount, setDoorsCount] = useState('');
     const [availablePaintType, setAvailablePaintType] = useState('');
+    const [imgUrl, setImageUrl] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
+    const [value, setValue] = useState<File | null>(null)
 
     useEffect(() => {
         try {
@@ -125,7 +136,8 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
                 modelType: modelType,
                 modelWidth: modelWidth,
                 doorsCount: doorsCount,
-                availablePaintType: availablePaintType
+                availablePaintType: availablePaintType,
+                imgUrl: imgUrl
             }
             props.submitForm(data);
         } catch (error) {
@@ -170,6 +182,7 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
         product && setAvailablePaintType(product.availablePaintType);
         product && setDoorsCount(product.doorsCount);
         product && setDescription(product.description);
+        product && setImageUrl(product.imgUrl)
     }
 
     const onClickResetHandler = () => {
@@ -188,12 +201,13 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
         setLength('');
         setBreadth('');
         setHeight('');
-        setAboutProductList([{aboutProduct:''}]);
-        setKeyFeatureList([{description:''}]);
+        setAboutProductList([{ aboutProduct: '' }]);
+        setKeyFeatureList([{ description: '' }]);
         setModelType('');
         setModelWidth('');
         setDoorsCount('');
         setAvailablePaintType('');
+        setImageUrl('');
     }
 
     const removeAboutProductControl = (event: any, index: number) => {
@@ -254,9 +268,54 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
         setKeyFeatureList([...keyFeatureList, { description: '' }])
     }
 
+    const uploadProductImage = async (file) => {
+        setShowLoader(true);
+        uploadFile(file, bucketConfig)
+            .then((data: { location: string; }) => {
+                console.log('image uploaded successfully', data);
+                let imgUrl = data && data.location ? data.location : '';
+                setImageUrl(imgUrl);
+                setShowLoader(false);
+            })
+            .catch((err) => {
+                setShowLoader(false);
+                console.error(err)
+            })
+    }
+
+    const imageUploadChangeHandler = (event) => {
+        uploadProductImage(event)
+    }
+    const removeImg = async () => {
+        const fileName = imgUrl && imgUrl.length ? imgUrl.split('product_images/')[1] : '';
+        try {
+            if (fileName.length) {
+                deleteUploadedFile(fileName, bucketConfig)
+            }
+        } catch (error) {
+            console.log('error while deleting --', error)
+        }
+
+    }
+
+    const deleteUploadedFile = async (fileName, bucketConfig) => {
+        setShowLoader(true);
+        deleteFile(fileName, bucketConfig)
+            .then((data: { location: string; }) => {
+                console.log('image deleted successfully', data);
+                //let imgUrl = data && data.location ? data.location : '';
+                setImageUrl('');
+                setShowLoader(false);
+            })
+            .catch((err) => {
+                setShowLoader(false);
+                console.error(err)
+            })
+    }
+
     return (
         <div className={styles.edit_product_form__root}>
-
+            {showLoader && <Loader />}
             <form onSubmit={onCreateFormSubmit}>
                 <label className={styles.create_product_form_label}>Basic Details Section</label>
                 <div className={styles.form__row}>
@@ -320,19 +379,41 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
 
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
-                        <TextField required label="Model Type" variant="outlined" onChange={modelTypeInputChangeHandler} value={modelType} />
+                        <InputLabel id="demo-simple-select-standard-label">Model Type</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={modelType} label="Model Type" onChange={modelTypeInputChangeHandler}>
+                            <MenuItem value=""><em>None</em></MenuItem>
+                            <MenuItem value="household">House Hold</MenuItem>
+                            <MenuItem value="office">Office Use</MenuItem>
+                            <MenuItem value="commercial">Commercial</MenuItem>
+                        </Select>
+                    </FormControl>
+
+                    <FormControl className={styles.form__row___control}>
+                        <InputLabel id="demo-simple-select-standard-label">No of Doors</InputLabel>
+                        <Select
+                            required
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={doorsCount} label="Model Type" onChange={doorsCountInputChangeHandler}>
+                            <MenuItem value=""><em>None</em></MenuItem>
+                            <MenuItem value="1">1</MenuItem>
+                            <MenuItem value="2">2</MenuItem>
+                            <MenuItem value="3">3</MenuItem>
+                            <MenuItem value="4">4</MenuItem>
+                            <MenuItem value="5">5</MenuItem>
+                            <MenuItem value="6">6</MenuItem>
+                            <MenuItem value="7">7</MenuItem>
+                            <MenuItem value="8">8</MenuItem>
+                        </Select>
                     </FormControl>
                 </div>
 
                 <div className={styles.form__row}>
                     <FormControl className={styles.form__row___control}>
                         <TextField required label="Model Width" variant="outlined" onChange={modelWidthInputChangeHandler} value={modelWidth} />
-                    </FormControl>
-                </div>
-
-                <div className={styles.form__row}>
-                    <FormControl className={styles.form__row___control}>
-                        <TextField required label="No of Doors" variant="outlined" onChange={doorsCountInputChangeHandler} value={doorsCount} />
                     </FormControl>
                 </div>
 
@@ -412,6 +493,20 @@ const EditProductForm = (props: { product: IProduct | null, submitForm: (arg0: I
                             Description Details
                         </Button>
                     </div>
+                </div>
+
+                <div className={styles.form__row}>
+                    <FormControl className={styles.form__row___control}>
+                        <TextField required label="Image Url" variant="outlined" name="key-feature" disabled={true} value={imgUrl} />
+                    </FormControl>
+                    <FormControl className={styles.form__row___control}>
+                        <MuiFileInput placeholder="Insert product Image" value={value} onChange={imageUploadChangeHandler} />
+                    </FormControl>
+                    <Tooltip title={'Delete Product Image'} >
+                        <IconButton aria-label="delete" color="primary" onClick={removeImg}>
+                            <ClearIcon />
+                        </IconButton>
+                    </Tooltip>
                 </div>
 
 

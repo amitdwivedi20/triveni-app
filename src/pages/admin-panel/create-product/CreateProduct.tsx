@@ -9,16 +9,19 @@ import { useNavigate } from 'react-router-dom';
 import { createProduct } from '../../../services/product-service/ProductService';
 import { AppConstants } from '../../../constants';
 import NotificationComponent from '../../../components/notification/NotificationComponent';
+import Loader from '../../../components/loader/Loader';
 
 const CreateProduct = () => {
     const [open, setOpen] = useState(false);
     const [reset, setReset] = useState(false);
     const [message, setMessage] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
     const navigate = useNavigate();
 
     const onSubmitActionHandler = (arg0: IProduct): void => {
         try {
-            //console.log('Form Submitted --', arg0);            
+            //console.log('Form Submitted --', arg0);
+            setShowLoader(true);           
             createProduct(arg0).then((res:ICommonResponse)=> {
                 //console.log(res);
                 if(res && res.result && res.status == AppConstants.statusCodes.status201){
@@ -29,6 +32,7 @@ const CreateProduct = () => {
                 }else{
 
                 }
+                setShowLoader(false);
             })            
         } catch (error) {
             throw new Error('OnSubmitForm Error ');
@@ -48,6 +52,7 @@ const CreateProduct = () => {
     
     return (
         <div className={styles.createproduct__root}>
+            {showLoader && <Loader />}
             <div className={styles.admin_dashboard__header}>
                 <div className={styles.admin_dashboard__header__item}>
                     <h2>Create Product</h2>

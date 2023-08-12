@@ -41,7 +41,7 @@ const ProductDetailComponent = () => {
 
         <div className={styles.product_detail_container}>
             <div className={styles.product_detail_content__image__container}>
-                <img alt="test-image-product" src={sampleImg} />
+                <img alt="test-image-product" src={product?.imgUrl} />
             </div>
             <div className={styles.product_detail_content}>
                 {isProductAvailable && <ProductDescriptionComponent product={product}/>}

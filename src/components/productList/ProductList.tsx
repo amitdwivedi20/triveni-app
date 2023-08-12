@@ -53,10 +53,7 @@ const ProductList = (props: any) => {
                         </div>
                     </div>
                 </div> */}
-                <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 'auto', borderRadius: 0 }}>
-                    {/* <IconButton sx={{ p: '10px' }} aria-label="menu">
-        <MenuIcon />
-      </IconButton> */}
+                <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 'auto', borderRadius: 0 }}>                   
                     <InputBase
                         sx={{ ml: 1, flex: 1 }}
                         placeholder="Search Product"
@@ -66,9 +63,6 @@ const ProductList = (props: any) => {
                         <SearchIcon />
                     </IconButton>
                     <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                    {/* <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
-                        <DirectionsIcon />
-                    </IconButton> */}
                     <Typography onClick={handleFilterClick}>
                         Filters <ArrowDropDownIcon className={styles.filter__arowdownicon} />
                     </Typography>
